@@ -6,7 +6,6 @@ import (
 	"io/ioutil"
 	"log"
 	"net"
-	"sync"
 
 	pb "github.com/MSalehKoinWorks/grpc-one/student"
 	"google.golang.org/grpc"
@@ -14,7 +13,6 @@ import (
 
 type dataStudentServer struct {
 	pb.UnimplementedDataStudentServer
-	mu       sync.Mutex
 	students []*pb.Student
 }
 
